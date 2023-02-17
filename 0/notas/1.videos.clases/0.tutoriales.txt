@@ -1,0 +1,2 @@
+TUTORIAL exportar una base de datos en formato SQL desde HeidiSQL
+https://www.youtube.com/watch?v=AmArOaJI244

@@ -1,0 +1,16 @@
+enlace al Gist para style.css -> https://gist.github.com/codigoconjuan/42df6aeb964ffec8150125e0d1d5b175 
+
+explica line a linea el Gist de style.css
+
+/*
+    Theme Name: Gym Fitness
+    Theme URI: 
+    Author: Lionel Prats
+    Author URI: https://www.linkedin.com/in/lionel-prats/
+    Description: Theme Diseñado para el Gimnasio GymFitness
+    Version: 1.0
+    License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Tags: Gym, gimnasio, flexbox, css grid, mobile first
+    Text Domain: gymfitness
+*/

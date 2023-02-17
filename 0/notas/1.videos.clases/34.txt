@@ -1,0 +1,5 @@
+crear menu
+
+* cuando creamos un menu desde el dashboard con "crear menu" se crea un registro asociado en la tabla wp_terms
+
+1. click en "crear menu"

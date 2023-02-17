@@ -1,0 +1,7 @@
+1. creo la carpeta del proyecot en htdocs -> htdocs/lp-2023-wordpress-gimnasio 
+2. creo la BD lp-2023-wordpress-gimnasio en mi conexion local
+3. download desde https://wordpress.org/
+4. copio la arquitectura del proyecto del paso 3 dentro de la carpeta del paso 1 
+5. ingreso al proyecto desde el navegador -> localhost/lp-2023-wordpress-gimnasio 
+6. procedo a la configuracion inicial (ver paso a paso en ../capturas/0.instalacion.wordpress)
+
