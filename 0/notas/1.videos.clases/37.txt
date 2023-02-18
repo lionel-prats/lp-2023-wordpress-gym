@@ -1,0 +1,30 @@
+ENLACE A GIST PARA EFECTO EN LOS ENLACES DE .menu-principal
+https://gist.github.com/codigoconjuan/9cde54f7d1300bd95f108d78aef2112e
+
+.menu-principal a::before, 
+.menu-principal a::after {
+    position: absolute;
+    left: 0;
+    content: '';
+    display: block;
+    width: 100%;
+    height: 50%;
+    background-color: var(--primario);
+    z-index: -1;
+    transform: scaleX(0);
+    transition: transform .6s;
+}
+.menu-principal a::before {
+    top: 0;
+    transform-origin: left;
+}
+.menu-principal a::after {
+    top:50%;
+    transform-origin: right;
+}
+.menu-principal a:hover::before {
+    transform: scaleX(1);
+}
+.menu-principal a:hover::after {
+    transform: scaleX(1);
+}

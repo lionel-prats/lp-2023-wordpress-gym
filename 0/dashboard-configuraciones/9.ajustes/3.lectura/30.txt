@@ -1,0 +1,2 @@
+defino portada
+defino pagina de entradas

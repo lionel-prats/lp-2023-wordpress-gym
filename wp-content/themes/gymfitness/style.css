@@ -1,0 +1,171 @@
+/*
+    Theme Name: Gym Fitness
+    Theme URI: 
+    Author: Lionel Prats
+    Author URI: https://www.linkedin.com/in/lionel-prats/
+    Description: Theme Diseñado para el Gimnasio GymFitness
+    Version: 1.0
+    License: GNU General Public License v2 or later
+    License URI: http://www.gnu.org/licenses/gpl-2.0.html
+    Tags: Gym, gimnasio, flexbox, css grid, mobile first
+    Text Domain: gymfitness
+*/
+
+/* importacion de Raleway y Staaqliches desde Google Fonts (opcion que da GF, alternativa a pegar los <links> en el <head> del doc HTML)  */
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@400;700;900&family=Staatliches&display=swap');
+
+/* custom properties */
+:root {
+    /* Fuentes */
+    --fuente-principal: 'Raleway', sans-serif;
+    --fuente-headings: 'Staatliches', cursive;
+    /* Colores */
+    --blanco: #fff;
+    --gris-claro: #ebebeb;
+    --gris-oscuro: #2f2e2e;
+    --negro: #000;
+    --primario: #ff5b00;
+}
+
+html {
+    box-sizing: border-box;
+    font-size: 62.5%; /* 10px = 1rem */
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    font-family: var(--fuente-principal);
+    font-size: 1.8rem;
+    line-height: 2;
+}
+
+/* Headings */
+h1,h2,h3,h4 {
+    margin: 0 0 5rem 0;
+    font-family: var(--fuente-headings);
+    line-height: 1.2;
+}
+h1 {
+    font-size: 6rem;
+}
+h2 {
+    font-size: 4.8rem;
+}
+h3 {
+    font-size: 3.6rem;
+}
+h4 {
+    font-size: 2.4rem;
+}
+
+/* Globales */
+p {
+    margin: 0;
+}
+a {
+    text-decoration: none;
+}
+ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+img {
+    display: block;
+    max-width: 100%;
+    height: auto;
+}
+.contenedor {
+    width: min(95%, 120rem);
+    margin: 0 auto;
+    background-color: salmon;
+}
+
+/* Utilidades */
+.text-center {
+    text-align: center;
+}
+.texto-primary {
+    color: var(--primario);
+}
+.texto-blanco {
+    color: var(--blanco);
+}
+.seccion {
+    padding: 5rem 0;
+}
+
+/* Header */
+.header {
+    padding: 2rem 0;
+    background-color: var(--gris-oscuro);
+}
+.barra-navegacion {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+@media (min-width: 768px) {
+    .barra-navegacion {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+}
+/* .menu-principal {
+    display: none;
+} */
+@media (min-width: 768px) {
+    .menu-principal {
+        display: block;
+    }
+    .menu-principal .menu {
+        display: flex;
+    }
+}
+.menu-principal a {
+    display: block;
+    padding: .5rem 2rem;
+    font-family: var(--fuente-headings);
+    font-size: 2.2rem;
+    text-align: center;
+    color: var(--blanco);
+}
+@media (min-width: 768px) {
+    .menu-principal a {
+        position: relative;
+        z-index: 1;
+    }
+    /* clase que agrega automaticamente wp al <li> del enlace de .menu-principal seleccionado */
+    .current_page_item {
+        border-bottom: 3px solid var(--primario);
+    }
+    .menu-principal a::before, 
+    .menu-principal a::after {
+        position: absolute;
+        left: 0;
+        content: '';
+        display: block;
+        width: 100%;
+        height: 50%;
+        background-color: var(--primario);
+        z-index: -1;
+        transform: scaleX(0);
+        transition: transform .6s;
+    }
+    .menu-principal a::before {
+        top: 0;
+        transform-origin: left;
+    }
+    .menu-principal a::after {
+        top:50%;
+        transform-origin: right;
+    }
+    .menu-principal a:hover::before {
+        transform: scaleX(1);
+    }
+    .menu-principal a:hover::after {
+        transform: scaleX(1);
+    }
+}

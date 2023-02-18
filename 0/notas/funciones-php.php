@@ -45,12 +45,11 @@ add_filter();
 
 // video 34
 
-$args= array(
+wp_nav_menu([
     'theme_location => menu-principal',
     'container' => 'nav',
     'container_class' => 'menu-principal'
-);
-wp_nav_menu($args);
+]);
 // funcion para agregar un menu al documento html
 // theme_location indica cual menu de los registrados en functions.php queremos agregar al html
 // con container seteamos que etiqueta html sera el contenedor del menu (por defecto es un <div>)
@@ -60,6 +59,8 @@ wp_nav_menu($args);
 
 // video 35
 
+// en functions.php
+// funcion para agregar archivos .css y .js a las vistas
 function gymfitness_scripts_styles() {
     wp_enqueue_style('style', get_stylesheet_uri(), array(), '1.0.0');
     // wp_enqueue_style -> funcion para registrar una hoja de estilo (en functions.php)
@@ -73,6 +74,7 @@ add_action('wp_enqueue_scripts', 'gymfitness_scripts_styles');
 // gymfitness_scripts_styles -> vamos a usar la misma funcion para registrar tanto archivos .js como .css
 // usamos el hook 'wp_enqueue_scripts' para ejecutar la funcion que registrara stylesheets y scripts
 
+// en <head></head>
 wp_head();
 // funcion que ejecutamos dentro del <head>
 // seteara el <head> cargando mucha data (chequear en las dev tools del navegador)

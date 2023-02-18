@@ -1,0 +1,1 @@
+agrega Disable Gutenberg, para ver el viejo formato de editor de texto
