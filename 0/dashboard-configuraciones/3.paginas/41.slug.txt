@@ -1,0 +1,16 @@
+Habilitar slug de una pagina
+
+1 entro a editar una pagina
+2 click en "Opciones de pantalla", arriba a la derecha
+3 selecciono slug, y abajo de la pantalla aparece un input con el slug asociado a la pagina
+
+* el slug es el nombre con el que WP identifica internamete a esa pagina
+
+http://localhost/lp-2023-wordpress-gimnasio/contacto/
+http://localhost/lp-2023-wordpress-gimnasio/clases/
+
+* contacto y clases son los slugs de las paginas contacto y clases
+
+* si modifico el slug de clases con el valor "bizcochitos", entonces, al cliquear en el enlace "clases" del menu del header, me redirige a...
+http://localhost/lp-2023-wordpress-gimnasio/bizcochitos/
+* y sigue siendo el contendido de la pagina clases

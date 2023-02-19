@@ -1,0 +1,16 @@
+Definimos el archivo page-contenido-centrado.php en la raiz
+
+agregamos este comentario dentro de un bloque php arriba de todo
+<?php
+    /*  
+    * Template Name: Contenido Centrado (No Sidebars)
+    */ 
+?>
+
+esto habilitara esta plantilla como global dentro del dashboard
+- cuando editemos una page, en el panel de la derecha, dentro de Atributos de página se generara un <select> con <label> Plantilla, con <options>...
+- <option>Plantilla por defecto</option>
+- <>Contenido Centrado (No Sidebars)</
+option>
+
+De esa manera podermos asignarle una plantilla customizada a nuestras paginas

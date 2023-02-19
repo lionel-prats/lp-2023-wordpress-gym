@@ -1,0 +1,9 @@
+- creamos la carpeta /template-parts para guardar nuestros archivos parciales
+
+- es una convencion de wp ponerle este nombre, pero podemos llamarla de cualquie manera
+
+- aca podemos guardar parciales de codigo que quiero reutilizar en distintas vistas
+
+- tambien podriamos guardar parciales en la raiz, si quisieramos
+
+- con la funcion <?php get_template_part('template-parts/pagina'); ?> incluimos parciales en nuestras vistas

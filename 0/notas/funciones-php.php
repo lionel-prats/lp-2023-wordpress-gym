@@ -82,5 +82,84 @@ wp_head();
 
 // ------------------------------------------------------------------------------------------------
 
-// video ?
+// video 42
+get_header();
+// esta funcion incluira el contenido de header.php
 
+the_title('<h1 class="text-center text-primary">','</h1>');
+// esta funcion incluye el titulo de un post/entrada/etc, y le podemos pasar por parametro la/s etiquetas html contenedoras (opcional)
+
+the_content();
+// esta funcion incluye el contenido de un post/entrada/etc, por defecto va en envuelto en un <p></p> 
+// podemos editar el formato html del content, desde el dashboard, con el panel de edicion de la entrada/post/etc (opciones Visual y HTML)
+
+// ------------------------------------------------------------------------------------------------
+
+// video 43
+
+// en functions.php
+function gymfitness_setup (){
+    // imagenes destacadas 
+    add_theme_support('post-thumbnails');
+}
+add_action('after_setup_theme', 'gymfitness_setup');
+// el hook after_setup_theme se ejecuta una vez que un tema ha sido activado (43)
+// se activa el tema y se ejecuta automaticamente esta funcion
+// todo este codigo habilitara una "caja" en el dashboard, cuando entremos a editar una pagina/entrada/etc, que estara en el panel lateral derecho, que nos permitira agregar una imagen destacada al post que estemos editando
+// al agregar una imagen destacada, se creara una carpeta "uploads" en la raiz del proyecto, con una subcarpteta 2023 (corresponiente al año en que fue subida la imagen), y dentro una subcarpeta 02 (correspondiente al mes en que fue subida la imagen), que contendra 6 versiones de la imagen subida (la version original con el nombre original + 5 versiones de diferentes tamaños, para las distintas resoluciones de pantalla)
+// default -> weight-lifting-1284616_1920.jpg                       -> 336KB
+// 150px * 150px -> weight-lifting-1284616_1920-150x150.jpg         -> 7KB
+// 300px * 200px -> weight-lifting-1284616_1920-300x200.jpg         -> 15KB
+// 768px * 512px -> weight-lifting-1284616_1920-768x512.jpg         -> 52KB
+// 1024px * 682px -> weight-lifting-1284616_1920-1024x682.jpg       -> 79KB
+// 1536px * 1023px -> weight-lifting-1284616_1920-1536x1023.jpg     -> 145KB
+// este codigo habilitara "la caja" de manera global (para entradas, pages, etc)
+
+// en vistas
+if (has_post_thumbnail()) {
+
+    the_post_thumbnail('full', array(
+        'class' => 'imagen-destacada',
+        'alt' => 'Imagen Sobre Nosotros',
+    ));
+    // funcion encargada de incluir en una vista (page/entrada/etc) la imagen destacada asociada a dicho post
+
+}
+// la funcion has_post_thumbnail() retornara 1 si el post tiene imagen destacada y nada si no la tiene
+// ejecutar the_post_thumbnail() dentro del if(has_post_thumbnail()) nos asegura que la funcion the_post_thumbnail() no se ejecute innecesariamente (no se ejecutara en posts sin imagen destacada)
+// los parametros son opcionales - funciona sin pasarle ninguno
+// 1er param == tamaño de la imagen
+// 2do. param == arreglo de atributos HTML
+// funcion encargada de incluir en una vista (page/entrada/etc) la imagen destacada asociada a dicho post
+// lo hace con el siguiente formato
+/* 
+<img 
+    width="1920" 
+    height="1279" 
+    src="http://localhost/lp-2023-wordpress-gimnasio/wp-content/uploads/2023/02/weight-lifting-1284616_1920.jpg" 
+    class="attachment-post-thumbnail size-post-thumbnail wp-post-image" 
+    alt="" 
+    decoding="async" 
+    srcset="
+        http://localhost/lp-2023-wordpress-gimnasio/wp-content/uploads/2023/02/weight-lifting-1284616_1920.jpg 1920w, 
+        http://localhost/lp-2023-wordpress-gimnasio/wp-content/uploads/2023/02/weight-lifting-1284616_1920-300x200.jpg 300w, 
+        http://localhost/lp-2023-wordpress-gimnasio/wp-content/uploads/2023/02/weight-lifting-1284616_1920-1024x682.jpg 1024w, 
+        http://localhost/lp-2023-wordpress-gimnasio/wp-content/uploads/2023/02/weight-lifting-1284616_1920-768x512.jpg 768w, 
+        http://localhost/lp-2023-wordpress-gimnasio/wp-content/uploads/2023/02/weight-lifting-1284616_1920-1536x1023.jpg 1536w
+    " 
+    sizes="(max-width: 1920px) 100vw, 1920px" 
+/>
+*/
+
+// ------------------------------------------------------------------------------------------------
+
+// video 45
+
+get_template_part('template-parts/pagina');
+// con esta funcion podemos incluir parciales 
+// pueden estar dentro de carpetas, como en este caso, o archivos directamente ubicados en la raiz
+// la carpeta y/o el archivo pueden tener cualquier nombre, en este caso le puse template-parts a la carpeta, y pagina al archivo parcial
+
+// ------------------------------------------------------------------------------------------------
+
+// video 46
