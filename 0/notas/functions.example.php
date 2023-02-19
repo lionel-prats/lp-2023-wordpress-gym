@@ -3,6 +3,8 @@
 function gymfitness_setup (){
     // imagenes destacadas 
     add_theme_support('post-thumbnails');
+    //titulos para SEO
+    add_theme_support('title-tag');
 }
 add_action('after_setup_theme', 'gymfitness_setup');
 // el hook after_setup_theme se ejecuta una vez que un tema ha sido activado (43)

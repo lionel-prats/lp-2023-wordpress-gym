@@ -1,0 +1,18 @@
+TEMAS Y PLUGINS 
+
+¿Cuando debo crear uno u otro?
+
+TEMA
+Un tema es para la presentacion y el diseño de tu sitio web. 
+Si el tema requiere ciertas funciones especificas para ese diseño, utiliza functions.php 
+
+PLUGIN
+un plugin es para funciones en general que no dependen del tema que esta activado, si no que se pueden activar en diferentes sitios o funcionar con diferentes temas.
+si el plugin requiere tener diseño propio se recomienda tener una hoja de estilos (que puede ser agregada en ese plugin) y tambien puedes utilizar un shortcode.
+
+Puedes tener un Tema por sitio.
+Puedes tener multiples Plugins activos por sitio.
+
+REGLA
+Tema -> Para diseño 
+Plugin -> Para funcionalidad

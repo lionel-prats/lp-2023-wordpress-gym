@@ -1,0 +1,5 @@
+
+En este apartado accedemos a informacion del sitio, que podemos accederla desde el back con la funcion get_bloginfo()
+
+esta funcion puede recibir distintos parametros
+https://developer.wordpress.org/reference/functions/get_bloginfo/

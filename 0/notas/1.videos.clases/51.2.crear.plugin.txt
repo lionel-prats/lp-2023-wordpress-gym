@@ -1,0 +1,47 @@
+En /wp-contents, antes de /themes, tenemos /plugins 
+
+En /wp-contents/plugins, creamos la carpeta /gymfitness-post-types 
+
+Dentro, creamos el archivo gymfitness_post_types.php
+
+Dentro, pegamos el gist proporcionado por el profesor (enlace externo - gist para registrar un nuevo plugin - video 51 -) vvv
+
+<?php
+/*
+    Plugin Name: Gym Fitness - Post Types
+    Plugin URI: http://twitter.com/codigoconjuan
+    Description: Añade Post Types al sitio Gym Fitness
+    Version: 1.0.0
+    Author: Juan Pablo De la torre Valdez
+    Author URI: http://twitter.com/codigoconjuan
+    Text Domain: gymfitness
+*/
+
+* este codigo en este archivo, incluira este plugin en dashboard/plugins/pugins instalados
+
+-----------------------------------------------------------
+
+*** EJEMPLO PRACTICO 
+
+cree en el root de /wp-contents/plugins el archivo picaro.php agregandole el siguiente codigo vvv 
+
+<?php
+/*
+    Plugin Name: Plugin name: Picaro 
+    Plugin URI: https://www.promiedos.com.ar
+    Description: Description: plugin de fantasia
+    Version: Version: 1.0.0
+    Author: Author: Lionel Prats
+    Author URI: https://www.revistapalermo.com.ar
+    Text Domain: Text Domain: text domain trucho
+*/
+
+el plugin se agrego correctamente a dashboard/plugins/pugins instalados (ver captura relacionada)
+
+-----------------------------------------------------------
+
+un plugin por default va a estar desactivado (seria muy inseguro que se activara en automatico)
+
+Al activar el plugin "Gym Fitness - Post Types" en el dashboard, se ejecutara todo el codigo que haya dentro del archivo que creamos vvv
+
+/wp-contents/plugins/gymfitness-post-types/gymfitness_post_types.php

@@ -77,6 +77,7 @@ add_action('wp_enqueue_scripts', 'gymfitness_scripts_styles');
 // en <head></head>
 wp_head();
 // funcion que ejecutamos dentro del <head>
+// inyectara algunas hojas de estilo internas de wordpress
 // seteara el <head> cargando mucha data (chequear en las dev tools del navegador)
 // entre otras cosas cargara los archivos que registremos en gymfitness_scripts_styles()
 
@@ -163,3 +164,36 @@ get_template_part('template-parts/pagina');
 // ------------------------------------------------------------------------------------------------
 
 // video 46
+get_footer();
+// funcion para incluir el archivo footer.php
+
+// ------------------------------------------------------------------------------------------------
+
+// video 47
+get_bloginfo();
+// funcion para acceder a informacion del sitio en dashboard/ajustes/generales
+
+// ------------------------------------------------------------------------------------------------
+
+// video 48
+wp_footer();
+// funcion para mostrar la barra de tareas de wp, en las vistas, arriba de todo, mientras estamos autenticados           
+// va entre la etiqueta de cierre del <footer> y la etiqueta de cierre del <body> vvv
+/* 
+    </footer>
+    <?php wp_footer(), ?>
+</body>
+*/
+
+// ------------------------------------------------------------------------------------------------
+
+// video 49
+
+// en functions.php
+function nombreFuncion (){
+    add_theme_support('title-tag');
+    // funcion para habilitar menus en dashboard/temas
+}
+add_action('after_setup_theme', 'nombreFuncion');
+
+// ejecutando la funcion add_theme_support('title-tag'); en functions.php (en la funcion que se ejecute con el hook 'after_setup_theme'), y eliminando del <head> del <title> (en header.php), los titulos de las vistas van a cargarse dinamicamente y se imprimira el nombre del post que se este renderizando (page, entrada, etc)

@@ -1,0 +1,9 @@
+En el menu que armamos, los enlaces toman los nombres de las pages 
+
+Desplegando un enlace del menu, podemos modificar el input "Etiqueta de navegación" para modificar el nombre que tendrá el enlace.
+
+Ejemplo:
+
+Nuestra página se llama "Sobre Nosotros"
+Modifiqué la etiqueta de navegacion por "Nosotros"
+Entonces, el enlace del menu a "Sobre nosotros", en las vistas, dice "Nosotros"

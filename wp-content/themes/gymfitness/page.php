@@ -1,7 +1,9 @@
-    <?php get_header(); ?>
+<?php 
+    get_header(); 
+?>
     <main class="contenedor seccion">
         <?php get_template_part('template-parts/pagina'); ?>
     </main>
-    <?php get_footer();?>
-</body>
-</html>
+<?php 
+    get_footer();
+?>

@@ -1,17 +1,19 @@
-    <?php get_header(); ?>
+<?php 
+    get_header(); 
+?>
     <main>
-        <?php
-            while(have_posts()): the_post();
+    <?php
+        while(have_posts()): the_post();
 
-                the_title();
+        the_title();
 
-                the_content();
+        the_content();
 
-            endwhile;
+        endwhile;
         ?>
     </main>
-    
-</body>
-</html>
 
+<?php 
+    get_footer();
+?>
 

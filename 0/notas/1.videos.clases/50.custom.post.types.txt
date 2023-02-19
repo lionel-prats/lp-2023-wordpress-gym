@@ -1,0 +1,19 @@
+En WordPress, las Paginas y Entradas son conocidas como POST TYPES o tipos de contenido
+
+WordPress almacena diferentes tipos de contenido en la base de datos. A esta division se la como Post Type.
+
+WordPress ya incluye algunos post types por default:
+- posts (entradas)
+- pages (paginas)
+- attachments 
+    "documento adjunto"; las cosas que subimos, por ejemplo, las imagenes destacadas
+- revisions 
+    WP tiene un sistema de revisiones, que puedes pensar en el como un Git, de tus entradas de blog o de tus paginas de WP
+- menus 
+- css 
+- changesets (esto es algo que se conoce como el customizer)
+
+Todos estos son post types en WP
+Es una forma en la que WP va agrupando la informacion
+
+* Tambien es posible crear tus propios Post Types en WP.

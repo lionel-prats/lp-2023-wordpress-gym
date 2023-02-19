@@ -1,8 +1,8 @@
 /*
     Theme Name: Gym Fitness
     Theme URI: 
-    Author: Lionel Prats
-    Author URI: https://www.linkedin.com/in/lionel-prats/
+    Author: Juan Pablo De la torre Valdez
+    Author URI: http://twitter.com/codigoconjuan
     Description: Theme Diseñado para el Gimnasio GymFitness
     Version: 1.0
     License: GNU General Public License v2 or later
@@ -76,6 +76,9 @@ img {
     display: block;
     max-width: 100%;
     height: auto;
+}
+hr {
+    border: 1px solid var(--gris-claro);
 }
 .imagen-destacada {
     margin-bottom: 3rem;
@@ -172,5 +175,39 @@ img {
     }
     .menu-principal a:hover::after {
         transform: scaleX(1);
+    }
+}
+
+/* footer */
+.contenido-footer {
+    padding: 4rem 0;
+}
+@media (min-width: 768px) {
+    .contenido-footer {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.footer .menu-principal a {
+    padding: 0 1rem;
+    font-size: 2.4rem;
+    text-align: center;
+    color: var(--negro);
+}
+
+.footer .menu-principal a::before, 
+.footer .menu-principal a::after {
+    display: none;
+}
+.copyright {
+    margin: 2rem 0 0 0;
+    font-family: var(--fuente-headings);
+    font-size: 1.8rem;
+    text-align: center;
+}
+@media (min-width: 768px) {
+    .copyright {
+        margin: 0;
+        font-size: 2.4rem;
     }
 }
