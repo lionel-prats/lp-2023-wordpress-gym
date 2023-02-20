@@ -1,0 +1,31 @@
+Buscamos "acf" en el buscador de plugins
+
+seleccionamos Advanced Custom Fields
+
+* una vez instalado, comprobe que se agrego una carpeta "advanced-custom-fields" a /wp-content/plugins/
+* casi con seguridad, es el codigo del plugin instalado 
+
+* se habilita la opcion "Custom Fields", en el panel lateral izquierdo
+* Desde aca podemos crear grupos de campos
+
+* Creamos el grupo de campos "Campos Para Clases"
+
+* Creamos el campo "Días Clase"
+* en General -> Field Type = Text 
+* en General -> Field Label = "Días Clase"
+* en Validation -> Required (obligatorio)
+* en Presentation -> Instictions = Días de la clase. Ejemplo: Lunes a Viernes.
+* en Settings/Location Rules -> asociamos este grupo a los post-type "Clases" (lo usaremos con los post-type clases)
+
+* Creamos el campo "Horario Inicio"
+* en General -> Field Type = Date Time Picker 
+* en General -> Field Label = "Hora Inicio"
+* en General -> Display Format & Return Format = "H:i" (18:15 // 20:30)
+* en Validation -> Required (obligatorio)
+
+* Creamos el campo "Horario Fin"
+* en General -> Field Type = Date Time Picker 
+* en General -> Field Label = "Hora Fin"
+* en General -> Display Format & Return Format = "H:i" (18:15 // 20:30)
+* en Validation -> Required (obligatorio)
+ 

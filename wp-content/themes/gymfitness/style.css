@@ -211,3 +211,63 @@ hr {
         font-size: 2.4rem;
     }
 }
+
+/* Cards */
+
+.listado-grid {
+    display: grid;
+    gap: 2rem; /* column-gap: 2rem; row-gap: 2rem; */
+    margin-top: 4rem;
+}
+@media (min-width: 768px) {
+    .listado-grid {
+        grid-template-columns: repeat(2, 1fr);
+    } 
+}
+.card {
+    position: relative;
+    background-image: linear-gradient(to bottom, transparent 0, rgb(0 0 0 / .7));
+    /* degradado de arriba a abajo, empezando en transparente */
+    overflow: hidden;
+}
+.card:hover img {
+    transform: scale(1.2);
+}
+.card img {
+    display: block;
+    position: relative;
+    z-index: -1;
+    /* bloque para que las imagenes mantengan proporciones uniformes entre si */
+    height: 40rem;
+    object-fit: cover;
+    /* bloque para que las imagenes mantengan proporciones uniformes entre si */
+    transition: transform 300ms ease; 
+}
+.card .contenido {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    padding: 2rem;
+}
+.card .contenido h3 {
+    margin: 0;
+    color: var(--blanco);
+}
+.card .contenido p {
+    color: var(--blanco);
+
+}
+
+/* sidebar */
+@media (min-width: 768px) {
+    .con-sidebar {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        gap: 4rem;
+    }
+}
+.informacion-clase {
+    font-size: 2.2rem;
+    font-weight: 700;
+    text-align: center;
+}

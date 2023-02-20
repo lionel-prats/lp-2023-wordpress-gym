@@ -1,3 +1,4 @@
+<!-- parcial para las vistas de una pagina en particular -->
 <?php 
     while(have_posts()): the_post();
 
@@ -11,14 +12,3 @@
         the_content();
 
     endwhile;
-
-    /* 
-    2050
-    
-
-    
-    
-    
-    
-    
-    */

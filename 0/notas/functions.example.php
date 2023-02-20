@@ -48,3 +48,31 @@ function gymfitness_scripts_styles() {
     // 4to parametro, version
 }
 add_action('wp_enqueue_scripts', 'gymfitness_scripts_styles');
+
+// definir zona de widgets 
+function gymfitness_widgets() {
+    register_sidebar(array(
+        'name' => 'Sidebar 1', // forma en la que podemos identificar un sidebar
+        'id' => 'sidebar_1',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="text-center text-primary">',
+        'after_title' => '</h3">'
+    ));
+    // registro 1 widwet de nombre Sidebar 1 (chequear en /Dashboard/Apariencia/Widgets)
+    
+    register_sidebar(array(
+        'name' => 'Sidebar 2', // forma en la que podemos identificar un sidebar
+        'id' => 'sidebar_2',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="text-center text-primary">',
+        'after_title' => '</h3">'
+    ));
+    // registro 1 widwet de nombre Sidebar 1 (chequear en /Dashboard/Apariencia/Widgets)
+    
+    // register_sidebar() -> funcion de WP que nos permite añadir una zona de widgets
+    // register_sidebar() -> funcion de WP que nos permite registrar un widget
+}
+add_action('widgets_init', 'gymfitness_widgets');
+// al agregar este bloque, en el dashboard se agregara el item /Apariencia/Widgets

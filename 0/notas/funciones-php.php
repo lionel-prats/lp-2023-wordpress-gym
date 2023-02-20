@@ -266,3 +266,62 @@ the_permalink();
 // retorna la url a una entrada (dentro de un loop (?))
 // en este caso, lo use en page-listado-clases.php, durante la iteracion de las clases
 // http://localhost/lp-2023-wordpress-gimnasio/gymfitness_clases/primer-semana-de-gym/
+
+//------------------------------------------------------------------------------------------------
+// video 58 
+
+// en page-listado-clases.php
+the_field('hora_inicio');
+// funcion del plugin Advanced Custom Fields
+// imprime por pantalla el contenido de un campo (le pasamos el Name)
+
+get_field('hora_inicio');
+// funcion del plugin Advanced Custom Fields
+// retorna (NO IMPRIME) el contenido de un campo (le pasamos el Name)
+
+//------------------------------------------------------------------------------------------------
+// video 65 
+
+// en pagina.php
+is_single();
+// funcion de WP que devuelve TRUE si el loop de WP esta iterando sobre una entrada o un custom-post-type y FALSE si esta iterando sobre otro tipo de post (page)
+// a esta funcion se la conoce en WP como conditionals_tags o etiquetas condicionales
+
+is_page();
+// igual que la anterior pero retorna TRUE si estamos iterando pages y FALSE si estamos iterando entradas o custom-post-types
+
+// al final, crea un nuevo parcial (clase.php) para diferenciar el loop para el custom-post-type clases del parcial con el loop para paginas (pagina.php)
+
+//------------------------------------------------------------------------------------------------
+// video 66
+
+// en functions.php 
+
+// definir zona de widgets 
+function gymfitness_widgets() {
+    register_sidebar(array(
+        'name' => 'Sidebar 1', // forma en la que podemos identificar un sidebar
+        'id' => 'sidebar_1',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="text-center text-primary">',
+        'after_title' => '</h3">'
+    ));
+    // registro 1 widwet de nombre Sidebar 1 (chequear en /Dashboard/Apariencia/Widgets)
+    
+    register_sidebar(array(
+        'name' => 'Sidebar 2', // forma en la que podemos identificar un sidebar
+        'id' => 'sidebar_2',
+        'before_widget' => '<div class="widget">',
+        'after_widget' => '</div>',
+        'before_title' => '<h3 class="text-center text-primary">',
+        'after_title' => '</h3">'
+    ));
+    // registro 1 widwet de nombre Sidebar 1 (chequear en /Dashboard/Apariencia/Widgets)
+    
+    // register_sidebar() -> funcion de WP que nos permite añadir una zona de widgets
+    // register_sidebar() -> funcion de WP que nos permite registrar un widget
+}
+add_action('widgets_init', 'gymfitness_widgets');
+// al agregar este bloque, en el dashboard se agregara el item /Apariencia/Widgets
+
