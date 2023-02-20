@@ -186,14 +186,83 @@ wp_footer();
 */
 
 // ------------------------------------------------------------------------------------------------
-
 // video 49
 
 // en functions.php
 function nombreFuncion (){
     add_theme_support('title-tag');
-    // funcion para habilitar menus en dashboard/temas
+    //titulos para SEO
 }
 add_action('after_setup_theme', 'nombreFuncion');
 
-// ejecutando la funcion add_theme_support('title-tag'); en functions.php (en la funcion que se ejecute con el hook 'after_setup_theme'), y eliminando del <head> del <title> (en header.php), los titulos de las vistas van a cargarse dinamicamente y se imprimira el nombre del post que se este renderizando (page, entrada, etc)
+// ejecutando la funcion add_theme_support('title-tag'); en functions.php (en la funcion que se ejecute con el hook 'after_setup_theme'), y eliminando del <head> del <title> (en header.php), los titulos de las vistas van a cargarse dinamicamente y se imprimira el nombre del post type que se este renderizando (page, entrada, etc)
+
+// ------------------------------------------------------------------------------------------------
+// video 52
+
+// en el plugin gymfitness_post_types 
+if(!defined('ABSPATH')) die();
+// funcion interna de WP para que no se pueda acceder al archivo desde la URL
+// sin este if se podria acceder desde la URL con el siguiente path
+// http://localhost/lp-2023-wordpress-gimnasio/wp-content/plugins/gymfitness-post-types/gymfitness_post_types.php
+// probe de meter este if en archivos dentro de /theme y parece que la constante se define en alguna parte ya que para que muera el proceso tengo que quitar el "!" -> if(defined('ABSPATH')) die();
+
+
+register_post_type( 'gymfitness_clases', $args );
+// funcion para registrar un custom post type (lo implemente dentro del plugin 'gymfitness_post_types') 
+// el primer parametro es el nombre que le doy al custom post type creado
+// el 2do parametro es el array de configuracion
+
+// ------------------------------------------------------------------------------------------------
+// video 54
+?>
+
+<!-- archivo page-listado-clases (sera la pagina que renderize las distintas clases)  -->
+<?php
+    /*  
+    * Template Name: Listado de clases
+    */
+    get_header(); 
+?>
+    <main class="contenedor seccion">
+
+        <h1>Listado de clases</h1>
+        <ul class="listado-grid">
+            <?php
+            $args= array(    
+                "post_type" => "gymfitness_clases",
+                // le pasamos el nombre del post type
+            );
+            $clases = new WP_Query($args);
+            // instancia de la clase WP_Query (para crear consultas mas complejas a la BD)
+            // esta clase nos va a permitir consultar la BD de WP cuando no se trata de consultas standard en WP
+            // las consultas standard de WP se hacen por medio de los templates; cada template hace una consulta
+            // cuando querramos modificar las consultas standard, podemos usar esta clase
+            // forma de hacer una consulta al custom post type "gymfitness_clases", creado por nosotros
+
+            while($clases->have_posts()):
+                $clases->the_post();
+            ?>
+            <li class="card">
+                <?php the_title(); ?>
+            </li>
+            <?php  
+            endwhile;
+            wp_reset_postdata();
+            // resetamos la consulta de WP personalizada
+            ?>
+        </ul>
+        
+
+    </main>
+
+<?php 
+    get_footer();
+
+// ------------------------------------------------------------------------------------------------
+// video 55 
+
+the_permalink();
+// retorna la url a una entrada (dentro de un loop (?))
+// en este caso, lo use en page-listado-clases.php, durante la iteracion de las clases
+// http://localhost/lp-2023-wordpress-gimnasio/gymfitness_clases/primer-semana-de-gym/

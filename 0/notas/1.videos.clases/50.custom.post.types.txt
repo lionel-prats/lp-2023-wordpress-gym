@@ -17,3 +17,5 @@ Todos estos son post types en WP
 Es una forma en la que WP va agrupando la informacion
 
 * Tambien es posible crear tus propios Post Types en WP.
+
+* Creremos el Custom Post Typle "Clases

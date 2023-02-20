@@ -1,0 +1,7 @@
+explica que editando el array que le pasamos a "register_post_type( 'gymfitness_clases', $args );" en el plugin gymfitness_post_types.php y agregamos 'custom-fields' al array de 'support', como se ve abajo...
+
+'supports' => array( 'title', 'editor', 'thumbnail', 'custom-fields' ), 
+
+... esto nos genera campos extras de edicion de un post del post-type clases 
+
+luego dice que estos metaboxes son muy confusos para el usuario final, y que el no lo usa, y que en cambio, utiliza un plugin "advance custom field", y que explica como usarlo en el video 56

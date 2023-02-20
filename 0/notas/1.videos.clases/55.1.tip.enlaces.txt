@@ -1,0 +1,11 @@
+Estaba trabajando con la iteracion de las clases 
+
+en index.php no se cargaba la info, cuando entraba al contenido de una clase en particular
+
+SOLUCION vvv 
+
+ir al dashboard/ajustes/ enlaces permanentes 
+
+click en guardar cambios
+
+"eso va a regenerar un archivo que se llama .htaccess (esta en la raiz del proyecto)"

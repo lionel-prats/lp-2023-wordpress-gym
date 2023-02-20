@@ -1,0 +1,5 @@
+Doc oficial
+https://developer.wordpress.org/reference/functions/register_post_type/
+
+Entonces creamos el plugin Gym Fitness - Post Types
+Dentro del plugin, creamos el custom post type Clases

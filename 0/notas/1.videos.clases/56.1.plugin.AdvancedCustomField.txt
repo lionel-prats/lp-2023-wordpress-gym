@@ -1,0 +1,6 @@
+Buscamos "acf" en el buscador de plugins
+
+seleccionamos Advanced Custom Fields
+
+* una vez instalado, comprobe que se agrego una carpeta "advanced-custom-fields" a /wp-content/plugins/
+* casi con seguridad, es el codigo del plugin instalado

@@ -45,3 +45,11 @@ un plugin por default va a estar desactivado (seria muy inseguro que se activara
 Al activar el plugin "Gym Fitness - Post Types" en el dashboard, se ejecutara todo el codigo que haya dentro del archivo que creamos vvv
 
 /wp-contents/plugins/gymfitness-post-types/gymfitness_post_types.php
+
+-----
+
+*** sin darle un nombre al plugin en el gist del plugin, WP no lo reconocera y no podremos usarlo vvv
+
+/*
+Plugin Name: Gym Fitness - Post Types
+*/
