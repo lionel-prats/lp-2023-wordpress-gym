@@ -1,4 +1,5 @@
-<!-- template part para la pagina de blog -->
+<!-- template part usado en la pagina de blog -->
+<!-- template part usado en la pagina de una categoria en particular -->
 
 <li class="card">
     <?php the_category(); ?>

@@ -1,4 +1,4 @@
-<!-- blog  -->
+<!-- vista de la pagina blog  -->
 
 <?php 
     get_header(); 

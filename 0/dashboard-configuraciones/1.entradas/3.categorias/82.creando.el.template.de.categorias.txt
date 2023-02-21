@@ -1,0 +1,16 @@
+Jerarquia (desde la mas genera a la mas especifica)
+fuente -> https://developer.wordpress.org/files/2014/10/Screenshot-2019-01-23-00.20.04.png
+
+1 index.pxp
+2 archive.pxp
+3 category.pxp
+
+4 category-$id.pxp
+Si desde el dashboard damos click a editar, en la url hallaremos el $id (es el query param tag_ID) vvv
+http://localhost/lp-2023-wordpress-gimnasio/wp-admin/term.php?taxonomy=category&tag_ID=5&post_type=post&wp_http_referer=%2Flp-2023-wordpress-gimnasio%2Fwp-admin%2Fedit-tags.php%3Ftaxonomy%3Dcategory
+
+5 category-$slug.pxp
+el slug lo vemos (y podemos modificar) en el input slug al editar una categoria, y tambien lo podemos leer en la columna "Slug" del listado de categorias, en Dashboard/Entradas/Categorías
+
+6 Category Archive (?)
+7 Archive Page (?)

@@ -360,3 +360,48 @@ hr {
     height: 300px;
     object-fit: cover;
 }
+
+/* informacion meta */
+.meta-info {
+    padding: 2rem;
+    background-color: var(--gris-claro);
+}
+@media (min-width: 992px) {
+    .meta-info {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+.meta-info .meta,
+.meta-info a {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: var(--negro);
+}
+.meta-info span {
+    color: var(--primario);
+}
+.meta-info .categorias,
+.meta-info .post-categories {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+.meta-info .post-categories a {
+    padding: 1rem;
+    border-radius: .5rem;
+    background-color: var(--negro);
+    color: var(--primario);
+}
+
+/* author page */
+.author-page-heading h2 {
+    margin: 0;
+}
+.author-page-heading p {
+    font-weight: 700;
+    color: var(--negro);
+}
+.author-page-heading span {
+    color: var(--primario);
+}
