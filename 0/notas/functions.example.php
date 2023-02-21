@@ -39,13 +39,29 @@ add_action('init', 'gymfitness_menus');
 
 // funcion para agregar archivos .css y .js a las vistas
 function gymfitness_scripts_styles() {
+    
     wp_enqueue_style('normalize', 'https://necolas.github.io/normalize.css/8.0.1/normalize.css', array(), '8.0.1');
+    // agregamos normalize al <head>
+
+    wp_enqueue_style('lightboxcss',  get_template_directory_uri() . "/css/lightbox.min.css", array(), '2.11.3');
+    // agregamos lightbox al <head>
+    
     wp_enqueue_style('style', get_stylesheet_uri(), array('normalize'), '1.0.0');
-    // funcion de wp para agregar hojas de estilo
+    // agregamos style.css al <head>
+    //  wp_enqueue_style() -> funcion de wp para agregar hojas de estilo
     // 1er parametro, identificador de la hoja de estilos (debe ser unico por cada hoja de estilo que querramos cargar)
     // 2do parametro, ubicacion del archivo (un echo devuelve http://localhost/lp-2023-wordpress-gimnasio/wp-content/themes/gymfitness/style.css)
     // 3er parametro, array de dependencias (las dependencias son las hojas de estilo que queremos que se cargen antes que esta - por ejemplo, normalize) 
     // 4to parametro, version
+
+    // archivos js
+    wp_enqueue_script('jquery');
+    // agregamos jquery al <head> (no hace falta nada mas que esto ya que WP trae jquery incorporado)
+    // otra forma valida de incorporarlo, en este caso, seria agregarlo al array de dependencias de lightbox (abajo), en lugar de escribir esta linea
+
+    wp_enqueue_script('lightboxjs', get_template_directory_uri() . "/js/lightbox.min.js", array(), '2.11.3', true); 
+    // con el parametro true indicamos que queremos que este archivo se carge en el footer y no el head
+    // agregamos lightbox al footer (video 76)
 }
 add_action('wp_enqueue_scripts', 'gymfitness_scripts_styles');
 
@@ -57,7 +73,7 @@ function gymfitness_widgets() {
         'before_widget' => '<div class="widget">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="text-center text-primary">',
-        'after_title' => '</h3">'
+        'after_title' => '</h3>'
     ));
     // registro 1 widwet de nombre Sidebar 1 (chequear en /Dashboard/Apariencia/Widgets)
     
@@ -67,7 +83,7 @@ function gymfitness_widgets() {
         'before_widget' => '<div class="widget">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="text-center text-primary">',
-        'after_title' => '</h3">'
+        'after_title' => '</h3>'
     ));
     // registro 1 widwet de nombre Sidebar 1 (chequear en /Dashboard/Apariencia/Widgets)
     

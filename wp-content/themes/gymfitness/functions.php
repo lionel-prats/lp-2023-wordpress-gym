@@ -1,5 +1,8 @@
 <?php
 
+// includes 
+require get_template_directory() . "/includes/widgets.php";
+
 function gymfitness_setup (){
     // imagenes destacadas 
     add_theme_support('post-thumbnails');
@@ -19,8 +22,14 @@ add_action('init', 'gymfitness_menus');
 
 // funcion para agregar archivos .css y .js a las vistas
 function gymfitness_scripts_styles() {
+    // archivos css
     wp_enqueue_style('normalize', 'https://necolas.github.io/normalize.css/8.0.1/normalize.css', array(), '8.0.1');
+    wp_enqueue_style('lightboxcss', get_template_directory_uri() . "/css/lightbox.min.css", array(), '2.11.3');
     wp_enqueue_style('style', get_stylesheet_uri(), array('normalize'), '1.0.0');
+    
+    // archivos js
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('lightboxjs', get_template_directory_uri() . "/js/lightbox.min.js", array(), '2.11.3', true); // con el parametro true indicamos que queremos que este archivo se carge en el footer y no el head
 }
 add_action('wp_enqueue_scripts', 'gymfitness_scripts_styles');
 
@@ -32,7 +41,7 @@ function gymfitness_widgets() {
         'before_widget' => '<div class="widget">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="text-center text-primary">',
-        'after_title' => '</h3">'
+        'after_title' => '</h3>'
     ));
     register_sidebar(array(
         'name' => 'Sidebar 2', // forma en la que podemos identificar un sidebar
@@ -40,7 +49,7 @@ function gymfitness_widgets() {
         'before_widget' => '<div class="widget">',
         'after_widget' => '</div>',
         'before_title' => '<h3 class="text-center text-primary">',
-        'after_title' => '</h3">'
+        'after_title' => '</h3>'
     ));
 }
 add_action('widgets_init', 'gymfitness_widgets');

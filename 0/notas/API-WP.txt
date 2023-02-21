@@ -1,0 +1,13 @@
+https://josefacchin.com/que-es-rest-api-wordpress/ 
+
+Endpoints - ejemplos 
+
+https://antonio-torres.es/wp-json/wp/v2/posts
+https://antonio-torres.es/wp-json/wp/v2/categories
+https://antonio-torres.es/wp-json/wp/v2/tags
+https://antonio-torres.es/wp-json/wp/v2/pages
+https://antonio-torres.es/wp-json/wp/v2/comments
+https://antonio-torres.es/wp-json/wp/v2/media
+https://antonio-torres.es/wp-json/wp/v2/users
+https://antonio-torres.es/wp-json/wp/v2/types
+https://antonio-torres.es/wp-json/wp/v2/settings

@@ -21,7 +21,7 @@ language_attributes();
 // video 32
 echo get_template_directory_uri();
 // http://localhost/lp-2023-wordpress-gimnasio/wp-content/themes/gymfitness
-// path desde la raiz del proyecto hasta el archivo donde la ubicacion del tema
+// path desde la raiz del servidor hasta el la carpeta del tema
 
 // ------------------------------------------------------------------------------------------------
 
@@ -84,8 +84,9 @@ wp_head();
 // ------------------------------------------------------------------------------------------------
 
 // video 42
-get_header();
+get_header('parametro - opcional');
 // esta funcion incluira el contenido de header.php
+// si le pasamos un parametro, WP buscara header-parametro.php
 
 the_title('<h1 class="text-center text-primary">','</h1>');
 // esta funcion incluye el titulo de un post/entrada/etc, y le podemos pasar por parametro la/s etiquetas html contenedoras (opcional)
@@ -164,8 +165,9 @@ get_template_part('template-parts/pagina');
 // ------------------------------------------------------------------------------------------------
 
 // video 46
-get_footer();
+get_footer('parametro - opcional');
 // funcion para incluir el archivo footer.php
+// si le pasamos un parametro, WP buscara footer-parametro.php
 
 // ------------------------------------------------------------------------------------------------
 
@@ -318,10 +320,106 @@ function gymfitness_widgets() {
         'after_title' => '</h3">'
     ));
     // registro 1 widwet de nombre Sidebar 1 (chequear en /Dashboard/Apariencia/Widgets)
-    
+
     // register_sidebar() -> funcion de WP que nos permite añadir una zona de widgets
     // register_sidebar() -> funcion de WP que nos permite registrar un widget
 }
 add_action('widgets_init', 'gymfitness_widgets');
 // al agregar este bloque, en el dashboard se agregara el item /Apariencia/Widgets
+
+//------------------------------------------------------------------------------------------------
+// video 67
+
+// en single-gymfitness_clases.php 
+
+dynamic_sidebar('sidebar_1');
+// con esta funcion podemos incluir un widget que hayamos definido, en una vista 
+// *** aunque el nombre de la funcion diga sidebar, podemos insertar un widget en cualquier parte del codigo
+// debemos pasarle el id refinido a la hora de crear ek widget (en functions.php), es decir, el id de la zona de widgets que querramos agregar
+// el widget 'sidebar 1' sera el siguiente bloque de codigo
+/* 
+<div class="widget">
+    <h3 class="text-center text-primary">Título del Widget</h3>
+    <form>
+        <div>
+            <label>Buscar:</label>
+            <input type="text">
+            <input type="submit" value="Buscar">
+        </div>
+    </form>
+</div>
+*/
+
+// luego, crea el sidebar.php y pega el codigo con la funcion dynamic_sidebvar('sidebar_1');
+
+get_sidebar();
+// con esta funcion se agrega el contenido de sidebar.php
+
+
+// luego, crea el sidebar-clases.php y pega el codigo de sidebar.php, y hace la siguiente modificacion 
+// dynamic_sidebvar('sidebar_2');
+// o sea, que sidebar-clases.php apuntara al widget sidebar_2
+
+get_sidebar('clases');
+// al pasarle este parametro a la funcion, esta funcion buscara el archivo sidebar-clases.php y renderizara su contenido
+
+//------------------------------------------------------------------------------------------------
+// video 68
+
+// COMO CREAR UN WIDGET PROPIO 
+
+// dentro del tema creamos /includes/widgets.php 
+// dentro pegamos el codigo del gist que nos paso el profesor 
+// con esto, creamos el widget GymFitness_Clases_Widget
+
+// luego. en funcions.php
+require get_template_directory() . "/includes/widgets.php";
+// importamos en functions.php el widget recien creado, y con esto se incluira en /dashboard/Apariencia/Widgets, para que podamos seleccionarlo
+
+//------------------------------------------------------------------------------------------------
+// video 69
+
+echo "<h2>Hola</h2>"; // Imprime una etiqueta <h2>Hola</h2>
+echo esc_html("<h2>Hola</h2>"); // imprime el string "<h2>Hola</h2>"
+
+// en este video explica como configurar el widget GymFitness_Clases_Widget, en /includes/widgets.php
+// en esta configuracion usa unas cuantas funciones que no explica que hacen (repasar)
+
+//------------------------------------------------------------------------------------------------
+// video 71
+
+// en /include/widgets
+the_post_thumbnail('thumbnail');
+// aca le pasamos 'thumbnail' como argumento para que renderize la version mas chica de cada imagen asociada a la clase que estamos iterando (la de 150*150)
+
+// https://developer.wordpress.org/reference/functions/the_post_thumbnail/
+//Default WordPress
+the_post_thumbnail( 'thumbnail' );     // Thumbnail (150 x 150 hard cropped)
+the_post_thumbnail( 'medium' );        // Medium resolution (300 x 300 max height 300px)
+the_post_thumbnail( 'medium_large' );  // Medium Large (added in WP 4.4) resolution (768 x 0 infinite height)
+the_post_thumbnail( 'large' );         // Large resolution (1024 x 1024 max height 1024px)
+the_post_thumbnail( 'full' );          // Full resolution (original size uploaded)
+
+//With WooCommerce
+the_post_thumbnail( 'shop_thumbnail' ); // Shop thumbnail (180 x 180 hard cropped)
+the_post_thumbnail( 'shop_catalog' );   // Shop catalog (300 x 300 hard cropped)
+the_post_thumbnail( 'shop_single' );    // Shop single (600 x 600 hard cropped)
+
+//------------------------------------------------------------------------------------------------
+// video 74
+
+// en page-galeria.php
+$galeria = get_post_gallery( get_the_ID(), false );
+// obtengo la galeria de imagenes de la pagina galeria (esta galeria la creamos desde el dashboard en el video 73) 
+
+$imagenGrande = wp_get_attachment_image_src($id, "medium");
+// a la funcion wp_get_attachment_image_src() le pasamos el id de una imagen y nos retornara un array con datos de esa imagen en el servidor, entre ellos el path donde esta ubicado
+
+//------------------------------------------------------------------------------------------------
+// video 76 
+
+// en functions.php 
+wp_enqueue_script('lightboxjs', get_template_directory_uri() . "/js/lightbox.min.js", array(), '2.11.3', true); 
+// funcion para registrar en el documento HTML un archivo .js
+// con el parametro true indicamos que queremos que este archivo se carge en el footer y no el head
 
