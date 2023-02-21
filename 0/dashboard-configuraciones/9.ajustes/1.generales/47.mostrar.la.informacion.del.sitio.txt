@@ -1,0 +1,12 @@
+
+En este apartado accedemos a informacion del sitio, que podemos accederla desde el back con la funcion get_bloginfo()
+
+la usa en footer.php vvv
+
+<p class="copyright">Todos los derechos reservados. <?php echo get_bloginfo('name') . ' ' . date('Y'); ?></p>
+
+get_bloginfo('name') retornara lo que figure en el input "Título del sitio" (en nuestro caso "Gym Fintness")
+
+esta funcion puede recibir distintos parametros
+https://developer.wordpress.org/reference/functions/get_bloginfo/
+

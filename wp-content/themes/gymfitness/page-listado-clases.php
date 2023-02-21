@@ -1,10 +1,11 @@
+<!-- esta es la plantilla de la pagina Clases, y en el <main> vamos a mostrar los post-type gymfitness_clases  -->
+    
 <?php
     /*  
     * Template Name: Listado de clases
     */
     get_header(); 
 ?>
-    <!-- esta es la plantilla de la pagina Clases, y en el <main> vamos a mostrar los post-type gymfitness_clases  -->
 
     <main class="contenedor seccion">
 

@@ -423,3 +423,42 @@ wp_enqueue_script('lightboxjs', get_template_directory_uri() . "/js/lightbox.min
 // funcion para registrar en el documento HTML un archivo .js
 // con el parametro true indicamos que queremos que este archivo se carge en el footer y no el head
 
+//------------------------------------------------------------------------------------------------
+// video 78 
+
+// en /template-parts/blog.php
+
+get_the_author_meta('display_name');
+// retorna el display-name del autor de una entrada
+
+the_author('display_name');
+// imprime el display-name del autor de una entrada
+
+?>
+<a href="<?php echo get_author_posts_url(get_the_author_meta('ID')); ?>">
+<!--  
+echo get_author_posts_url(get_the_author_meta('ID'))
+== enlace a la "pagina" de un autor y todos sus posts (?) vvv
+http://localhost/lp-2023-wordpress-gimnasio/author/lionel-prats/
+-->
+<?php
+
+get_the_author_meta('display_name'); // display_name del usuario en wp_user
+get_the_author_meta('ID'); // id del usuario en wp_user
+get_the_author_meta('user_email'); // user_email del usuario en wp_user
+// con esta funcion aparentemente puedo acceder a los diferentes campos de un usuario, en la tabla wp_users
+
+the_date();
+// imprime la fecha de una entrada, pero el profesor muestra que si hay posts con la misma fecha, esta solo se imprime 1 vez
+
+the_time( get_option('date_format') );
+// funcion que imprime la fecha en que un post fue creado
+
+//------------------------------------------------------------------------------------------------
+// video 80 
+
+the_category();
+// imprime las categorias asociadas a una entrada
+
+//------------------------------------------------------------------------------------------------
+// video ?

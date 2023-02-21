@@ -1,4 +1,4 @@
-<!-- parcial para las vistas de una pagina en particular -->
+<!-- parcial (template part) para las vistas de una pagina en particular -->
 <?php 
     while(have_posts()): the_post();
 

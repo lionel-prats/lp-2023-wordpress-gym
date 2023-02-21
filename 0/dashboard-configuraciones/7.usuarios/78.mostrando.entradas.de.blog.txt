@@ -1,0 +1,22 @@
+Explica como cambiar el display-name de un usuario, para que al momentto de imprimir su nombre por pantalla, podamos mostrar algo distinto a lo que figura en la BD, si queremos
+
+1. Debemos entrar a editar un usuario 
+2. Editar el input "Nombre"
+3. Editar el input "Apellido"
+4. Click en "Actualizar Perfil"
+5. Luego, el select "Mostrar este nombre públicamente", agregara las opciones relacionadas a la edicion anterior, y el option que seleccionemos, sera la que se imprimira con funciones como the_author() o get_the_author_meta('display_name')
+
+Ejemplo:
+
+input "Nombre" -> Raúl Lionel
+input "Apellido" -> Prats Costa 
+clic en "Actualizar Perfil"
+
+vvv
+
+select "Mostrar este nombre públicamente": 
+    1 lionel-prats (defecto)
+    2 Raúl Lionel
+    3 Prats Costa 
+    4 Raúl Lionel Prats Costa 
+    5 Prats Costa Raúl Lionel
