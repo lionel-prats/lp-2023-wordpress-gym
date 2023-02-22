@@ -1,0 +1,38 @@
+1. Instalamos el plugin Contact Form 7
+
+2. Lo activamos.
+
+esto nos genera el item "Contact" en el panel lateral izquierdo del dashboard
+
+--------------------
+
+SINTAXIS DEL PLUGIN (accedemos al editar un formulario, dentro de Dashboard/Contact) vvv
+
+<label> Your name
+    [text* your-name autocomplete:name] </label>
+
+    // [] == input | text == type="text" | * == obligatorio |
+    // your-name == name="your-name" | 
+    // autocomplete:name == placeholder="name" 
+    <label>
+        Your name
+        <input type="text" required name="your-name" placeholder="name">
+    </label>
+
+
+<label> Your email
+    [email* your-email autocomplete:email] </label>
+
+<label> Subject
+    [text* your-subject] </label>
+
+<label> Your message (optional)
+    [textarea your-message] </label>
+
+[submit "Submit"]
+
+--------------------
+
+Para insertar un formulariom debemos pegar el Shortcode en donde querramos renderizarlo.
+
+En nuestro caso, lo pegue en el content de la pagina contacto (en el Dashboard) y se renderizo correctamente

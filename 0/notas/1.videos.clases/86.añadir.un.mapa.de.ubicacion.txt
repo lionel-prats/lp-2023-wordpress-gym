@@ -1,0 +1,7 @@
+Utilizaremos el plugin ya instalado Advnced Custom Fields
+
+En el Dashboard, en Custom Fields, click en "+ Add New"
+
+---------------------------------------------------
+
+agregamos el plugin ACF OpenStreetMap Field 

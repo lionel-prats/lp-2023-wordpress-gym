@@ -1,0 +1,17 @@
+* en local, cuando enviemos un mensaje desde el form de contacto, no se va a enviar ningun email, ya que localmente no tenemos ningun servidor de emails
+
+* hoy en dia practicamente todos los hostings incluyen el servicio de envio de emails
+
+* por ende, va a funcionar correctamente una vez que llevemos la aplicacion a produccion 
+
+RECOMENDACION DEL PROFESOR 
+
+* aunque tu hosting soporte emails, si vas a enviar muchos emails (digamos 100, 200 por dia) lo mejor va a ser usar una solucion dedicada a emails.
+* una muy buena opcion es sendinblue
+* senindblue te va a permitir enviar hasta 300 emails diarios en su plan gratuito 
+
+enlace -> https://es.sendinblue.com/
+
+PRUEBA GRATIS EN sendinblue vvv
+email: lionelprats2021@gmail.com
+

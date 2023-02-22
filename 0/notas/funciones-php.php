@@ -612,4 +612,44 @@ echo get_the_author_meta('description');
 // probe de esta manera, sin pasarle el id de usuario como 2do. parametro (y como muestra el profesor), y funciono igual
 
 //------------------------------------------------------------------------------------------------
-// video ?
+// video 87 
+
+// en /template-parts/pagina 
+if(is_page('contacto')){
+    the_field("ubicacion");
+};
+// en este caso, a is_page() le pasamos el slug de la pagina contacto, para saber si se esta renderizando la vista de la pagina contacto, y en caso de que si, renderizar el mapa
+
+//------------------------------------------------------------------------------------------------
+// video 88
+
+// crear shortcuts (video 88 - Shortcode API en Wordpress)
+// este shortcode lo renderizo en la pagina de contacto
+// para eso, desde el dashboard, en el content de la pagina contacto, pego el shortcode con el siguiente formato vvv
+// [gymfitness_ubicacion]
+// gymfitness_ubicacion es el primer parametro que le pasamos a add_shortcode(), al final de esta funcion
+function gymfitness_ubicacion_shortcode() {
+    ?>
+        <div class="mapa">
+            <?php 
+                if(is_page('contacto')){
+                    the_field("ubicacion");
+                };
+            ?>
+        </div>
+        <h2 class="text-center text-primary">Formulario de contacto</h2>
+    <?php
+    echo do_shortcode('[contact-form-7 id="142" title="Contact form 1"]');
+    // con la funcion do_shortcode() puedo renderizar un shortcode
+    // en este caso, estamos renderizando el shortcode de Contact form 1 (Contact Form 7), que es el formulario de contacto, dentro de esta funcion (en functions.php), pero podemos renderizarlo desde cualquir parte del tema (en cualquier template)
+}
+add_shortcode('gymfitness_ubicacion', 'gymfitness_ubicacion_shortcode');
+// usando la funcion add_shortcode() podemos crear nuestros propios shortcodes 
+
+//------------------------------------------------------------------------------------------------
+// video 90
+
+// en header.php
+echo site_url('/');
+// "esto siempre nos va a llevar a la pagina principal de nuestro proyecto"
+// se lo pusimos al href del logo, en el <header>
